@@ -145,14 +145,14 @@ RCT_EXPORT_MODULE();
   return YES;
 }
 
-+ (void)didReceiveRemoteNotificationFCM:(nonnull NSDictionary *)userInfo fetchCompletionHandler:(nonnull RCTRemoteNotificationCallback)completionHandler {
++ (void)didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo fetchCompletionHandler:(nonnull RCTRemoteNotificationCallback)completionHandler {
     NSMutableDictionary* data = [[NSMutableDictionary alloc] initWithDictionary: userInfo];
     [data setValue:@"remote_notification" forKey:@"_notificationType"];
     [data setValue:@(RCTSharedApplication().applicationState == UIApplicationStateInactive) forKey:@"opened_from_tray"];
     [[NSNotificationCenter defaultCenter] postNotificationName:FCMNotificationReceived object:self userInfo:@{@"data": data, @"completionHandler": completionHandler}];
 }
 
-+ (void)didReceiveLocalNotificationFCM:(UILocalNotification *)notification {
++ (void)didReceiveLocalNotification:(UILocalNotification *)notification {
     NSMutableDictionary* data = [[NSMutableDictionary alloc] initWithDictionary: notification.userInfo];
     [data setValue:@"local_notification" forKey:@"_notificationType"];
     [data setValue:@(RCTSharedApplication().applicationState == UIApplicationStateInactive) forKey:@"opened_from_tray"];
