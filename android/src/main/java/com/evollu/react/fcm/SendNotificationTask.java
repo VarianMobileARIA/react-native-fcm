@@ -67,7 +67,6 @@ public class SendNotificationTask extends AsyncTask<Void, Void, Void> {
                 title = mContext.getPackageManager().getApplicationLabel(appInfo).toString();
             }
 
-            if (bundle.getString("isRemote") != null  || (bundle.getString("isRemote") == null && !isNetworkAvailable(this.mContext))) {
                 NotificationCompat.Builder notification = new NotificationCompat.Builder(mContext)
                         .setContentTitle(title)
                         .setContentText(bundle.getString("body"))
@@ -224,7 +223,6 @@ public class SendNotificationTask extends AsyncTask<Void, Void, Void> {
                     editor.remove(bundle.getString("id"));
                     editor.apply();
                 }
-            }
         } catch (Exception e) {
             Log.e(TAG, "failed to send local notification", e);
         }
