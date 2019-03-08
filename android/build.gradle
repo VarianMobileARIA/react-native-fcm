@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.3"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
-        minSdkVersion 23
-        targetSdkVersion 26
+        minSdkVersion 24
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
@@ -18,10 +18,10 @@ repositories {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.google.firebase:firebase-core:+'
-    compile 'com.android.support:support-v4:26.+'
-    compile 'com.google.firebase:firebase-messaging:+'
-    compile 'me.leolin:ShortcutBadger:1.1.17@aar'
-    compile project(path: ':ReactAndroid')
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api 'com.google.firebase:firebase-core:+'
+    api 'com.android.support:support-v4:28.+'
+    api 'com.google.firebase:firebase-messaging:+'
+    api 'me.leolin:ShortcutBadger:1.1.17@aar'
+    api project(path: ':ReactAndroid')
 }
