@@ -29,10 +29,10 @@ dependencies {
     def firebaseCoreVersion = project.hasProperty('firebaseCoreVersion') ? project.firebaseCoreVersion : DEFAULT_FIREBASE_CORE_VERSION
     def firebaseMessagingVersion = project.hasProperty('firebaseMessagingVersion') ? project.firebaseMessagingVersion : DEFAULT_FIREBASE_MESSAGING_VERSION
 
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.facebook.react:react-native:+'
-    compile "com.google.firebase:firebase-core:$firebaseCoreVersion"
-    compile "com.google.firebase:firebase-messaging:$firebaseMessagingVersion"
-    compile 'me.leolin:ShortcutBadger:1.1.17@aar'
-    compile "com.android.support:support-core-utils:28.0.0"
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api project(':ReactAndroid')
+    api "com.google.firebase:firebase-core:$firebaseCoreVersion"
+    api "com.google.firebase:firebase-messaging:$firebaseMessagingVersion"
+    api 'me.leolin:ShortcutBadger:1.1.17@aar'
+    api "com.android.support:support-core-utils:28.0.0"
 }
