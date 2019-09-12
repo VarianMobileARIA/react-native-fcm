@@ -30,7 +30,7 @@ dependencies {
     def firebaseMessagingVersion = project.hasProperty('firebaseMessagingVersion') ? project.firebaseMessagingVersion : DEFAULT_FIREBASE_MESSAGING_VERSION
 
     api fileTree(include: ['*.jar'], dir: 'libs')
-    api project(':ReactAndroid')
+    api "com.facebook.react:react-native:+"
     api "com.google.firebase:firebase-core:$firebaseCoreVersion"
     api "com.google.firebase:firebase-messaging:$firebaseMessagingVersion"
     api 'me.leolin:ShortcutBadger:1.1.17@aar'
